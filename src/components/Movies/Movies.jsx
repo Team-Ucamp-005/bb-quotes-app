@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Movie from '../Movie/Movie';
 import { Link } from "react-router-dom";
 import { Card, Button, Col, Row } from 'react-bootstrap';
 import axios from 'axios';

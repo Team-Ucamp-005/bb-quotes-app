@@ -4,9 +4,6 @@ import {
   Outlet
 } from "react-router-dom";
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import Movies from '../Movies/Movies';
-import Detail from '../Detail/Detail'
-import Home from '../../Home';
 
 const NavBar = () => {
   return (

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { Row, Col, Badge, Card } from 'react-bootstrap';
 import './styles.css'
 
 const Detail = () => {
-  const params = useParams();
-  console.log(params)
+  const { movieId } = useParams();
   const [movieState, setMovieState] = useState({})
   const getMovie = async (id) => {
     const url = `https://ghibliapi.herokuapp.com/films/${id}`
@@ -16,7 +15,7 @@ const Detail = () => {
     setMovieState(res.data)
   }
   useEffect(() => {
-    getMovie(params.movieId)
+    getMovie(movieId)
   }, [])
 
 
@@ -25,7 +24,7 @@ const Detail = () => {
       <Row className="justify-content-center" >
         <Col lg={12}>
           <div className="movie__hero">
-            <img width="100%" src={movieState.movie_banner} className="movier__hero-image" />
+            <img width="100%" alt={`${movieState.title}-img`} src={movieState.movie_banner} className="movier__hero-image" />
           </div>
         </Col>
       </Row>
